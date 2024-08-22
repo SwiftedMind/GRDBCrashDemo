@@ -5,10 +5,8 @@ import GRDB
 import OSLog
 
 struct AppDatabase {
-  private var enforceConstraints: Bool
-  init(_ dbWriter: any DatabaseWriter, enforceConstraints: Bool = true) throws {
+  init(_ dbWriter: any DatabaseWriter) throws {
     self.dbWriter = dbWriter
-    self.enforceConstraints = enforceConstraints
     try migrator.migrate(dbWriter)
   }
 

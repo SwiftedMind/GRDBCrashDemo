@@ -27,7 +27,7 @@ extension AppDatabase {
         configuration: AppDatabase.makeConfiguration()
       )
       // Create the AppDatabase
-      let appDatabase = try AppDatabase(dbPool, enforceConstraints: true)
+      let appDatabase = try AppDatabase(dbPool)
       
       return appDatabase
     } catch {
